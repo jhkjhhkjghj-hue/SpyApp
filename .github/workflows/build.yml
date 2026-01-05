@@ -20,8 +20,8 @@ jobs:
           pip install buildozer cython
 
       - name: Build with Buildozer
-        run: |
-          yes | buildozer android debug
+        run: buildozer android debug
+        
         continue-on-error: false
 
       - name: Upload APK
