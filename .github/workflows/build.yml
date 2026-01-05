@@ -18,9 +18,13 @@ jobs:
           sudo apt-get install -y build-essential libffi-dev python3-dev libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libgstreamer1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good
           pip install --upgrade pip
           pip install buildozer cython
+          
+     - name: Permissions fix
+        run: chmod -R 777 .
+        
 
       - name: Build with Buildozer
-        run: buildozer android debug
+        run: buildozer android debug --verbose
         
         continue-on-error: false
 
